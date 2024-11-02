@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Validation de Commande</title>
+    <style>
+        /* Importation de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap');
+
+        /* Styles globaux */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6; /* Couleur de fond mise à jour */
+            padding: 20px;
+        }
+
+        /* Titre principal */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+            color: #3b82f6; /* Couleur mise à jour */
+            font-size: 38px; /* Taille mise à jour */
+        }
+
+        /* Styles pour la liste des produits */
+        ul {
+            list-style-type: none; /* Supprime les puces */
+            padding: 0;
+        }
+
+        li {
+            background-color: #ffffff; /* Couleur blanche pour les éléments de liste */
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        /* Styles pour les informations de produit */
+        p {
+            color: #555; /* Couleur gris foncé pour le texte */
+            margin: 5px 0;
+        }
+
+        /* Styles pour le total */
+        .total {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e67e22; /* Couleur orange pour le total */
+            margin-top: 20px;
+            text-align: center; /* Centrer le total */
+        }
+
+        /* Style pour le bouton */
+        button {
+            background: linear-gradient(to right, #3b82f6, #60a5fa); /* Dégradé mise à jour */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            display: block;
+            margin: 20px auto; /* Centrer le bouton */
+        }
+
+        button:hover {
+            background: linear-gradient(to right, #2563eb, #3b82f6); /* Couleur au survol mise à jour */
+            transform: scale(1.05); /* Légère augmentation au survol */
+        }
+    </style>
+</head>
+<body>
+<h1>Validation de Commande</h1>
+<ul>
+    <li th:each="produit : ${panier}">
+        <p th:text="${produit.nom}">Nom</p>
+        <p th:text="${produit.prix}">Prix</p>
+    </li>
+</ul>
+<p>Total : <span th:text="${total}">Total</span></p>
+<form th:action="@{/passer-commande}" method="post">
+    <button type="submit">Passer la commande</button>
+</form>
+</body>
+</html>
