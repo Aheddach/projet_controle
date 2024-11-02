@@ -35,13 +35,6 @@ Ce projet est une application web de gestion de catalogue de produits, développ
 - **MySQL** : Base de données pour stocker les données de produits et de commandes
 - **Maven** : Pour gérer les dépendances
 
-### Étapes d'Installation
-
-1. **Cloner le projet** :
-   ```bash
-   git clone https://github.com/votre-utilisateur/votre-projet.git
-   cd votre-projet
-
 ### Vidéo démonstartion
 
 https://github.com/user-attachments/assets/0adb2b17-e0ff-486f-8936-bbab6ae263ca
